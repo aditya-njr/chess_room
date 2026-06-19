@@ -17,6 +17,7 @@ python -m venv venv
 source venv/Scripts/activate   # Windows Git Bash
 pip install -r requirements.txt
 uvicorn main:app --reload --host 0.0.0.0 --port 8000
+# python -m uvicorn main:app --reload
 ```
 
 ### 2. Frontend
@@ -38,10 +39,10 @@ Open http://localhost:5173 in two browser tabs (or two devices on the same netwo
 
 ## API
 
-| Method | Path | Description |
-|--------|------|-------------|
-| POST | `/rooms` | Create a new room |
-| GET | `/rooms/{code}` | Room status |
-| WS | `/ws/{code}` | Real-time game |
+| Method | Path            | Description       |
+| ------ | --------------- | ----------------- |
+| POST   | `/rooms`        | Create a new room |
+| GET    | `/rooms/{code}` | Room status       |
+| WS     | `/ws/{code}`    | Real-time game    |
 
 WebSocket messages: `join`, `move`, `resign`, `sync`.
